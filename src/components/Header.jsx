@@ -4,7 +4,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { path: "#hero", label: "Home" },
+    { path: "/#hero", label: "Home" },
     { path: "#about", label: "About" },
     { path: "#experience", label: "Experience" },
     { path: "#projects", label: "Projects" },
@@ -18,7 +18,7 @@ const Header = () => {
           NOOR UL HUDA
         </div>
 
-        {/* Desktop Nav */}
+        {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-6 font-medium text-red-600">
           {navItems.map(({ path, label }) => (
             <a
@@ -45,15 +45,23 @@ const Header = () => {
             viewBox="0 0 24 24"
           >
             {isOpen ? (
-              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
             ) : (
-              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
             )}
           </svg>
         </button>
       </div>
 
-      {/* Mobile Nav */}
+      {/* Mobile Navigation */}
       {isOpen && (
         <nav className="md:hidden px-4 pb-4 space-y-3 font-medium text-red-600 bg-white shadow-inner">
           {navItems.map(({ path, label }) => (
