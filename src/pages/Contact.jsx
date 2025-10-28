@@ -5,7 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 function Contact() {
   const [state, handleSubmit] = useForm("mzzkdpjo");
-  const [userEmail, setUserEmail] = useState("");
+  const [userName, setUserName] = useState("");
 
   const handleCustomSubmit = async (e) => {
     e.preventDefault();
@@ -15,8 +15,8 @@ function Contact() {
       e.target.reset();
     }
 
-    // Toast message instead of alert
-    toast.success(`Thank you ${userEmail || "User"}! Your message has been sent successfully.`, {
+    // Toast message using user name instead of email
+    toast.success(`Thank you ${userName || "User"}! Your message has been sent successfully.`, {
       position: "top-right",
       autoClose: 4000,
       hideProgressBar: true,
@@ -86,6 +86,7 @@ function Contact() {
                 name="name"
                 required
                 placeholder="Your Name"
+                onChange={(e) => setUserName(e.target.value)}
                 className="w-full border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-red-400"
               />
             </div>
@@ -97,7 +98,6 @@ function Contact() {
                 name="email"
                 required
                 placeholder="Your Email"
-                onChange={(e) => setUserEmail(e.target.value)}
                 className="w-full border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-red-400"
               />
               <ValidationError prefix="Email" field="email" errors={state.errors} />
