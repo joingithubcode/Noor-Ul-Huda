@@ -1,6 +1,6 @@
 import React from "react";
 import noorImg from "../assets/noor.png";
-import cvFile from "../assets/Noor's CV.pdf";
+import cvFile from "../assets/Noor Ul Huda Resume.pdf";
 
 function Hero() {
   return (
